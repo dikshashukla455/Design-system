@@ -46,7 +46,7 @@ export const Heading1 = ({ color, children }) => {
 	const colorCode = getThemeColor(color);
     console.log(colorCode);
 	return (
-		<h1 style={{ color: `${colors.colorCode}` }}>
+		<h1 style={{ color: `${colors[colorCode][color]}` }}>
 			{children} {colorCode}
 		</h1>
 	);
@@ -55,14 +55,44 @@ export const Heading1 = ({ color, children }) => {
 export const Heading2 = ({ color, children }) => {
 	const colorCode = getThemeColor(color);
 	return (
-		<h2 style={{ color: `${colors.colorCode}` }}>
+		<h2 style={{ color: `${colors[colorCode][color]}` }}>
 			{children} {colorCode}
 		</h2>
 	);
 };
 // h3
-export const Heading3 = ({ color, children }) => <h3 style={{}}>{children}</h3>;
+export const Heading3 = ({ color, children }) => {
+	const colorCode = getThemeColor(color);
+	return (
+		<h3 style={{ color: `${colors[colorCode][color]}` }}>
+			{children} {colorCode}
+		</h3>
+	);
+};
 // h4
-export const Heading4 = ({ color, children }) => <h4 style={{}}>{children}</h4>;
+export const Heading4 = ({ color, children }) => {
+	const colorCode = getThemeColor(color);
+	return (
+		<h4 style={{ color: `${colors[colorCode][color]}` }}>
+			{children} {colorCode}
+		</h4>
+	);
+};
 // h5
-export const Heading5 = ({ color, children }) => <h5 style={{}}>{children}</h5>;
+export const Heading5 = ({ color, children }) => {
+	const colorCode = getThemeColor(color);
+	return (
+		<h5 style={{ color: `${colors[colorCode][color]}` }}>
+			{children} {colorCode}
+		</h5>
+	);
+};
+//paragraph
+export const Paragraph = ({ color, children, Font_size, Text_transform }) => {
+	const colorCode = getThemeColor(color);
+	return (
+		<p style={{ color: `${colors[colorCode][color]}`, fontSize:`${Font_size}` , textTransform:`${Text_transform}` }}>
+			{children}
+		</p>
+	);
+};
