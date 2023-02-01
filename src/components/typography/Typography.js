@@ -1,44 +1,5 @@
 import { colors } from "../Data/ColorData";
-function getThemeColor(color) {
-	const themeColor = {
-		p: "primary",
-		s: "secondary",
-		t: "tertiary",
-        a: "accent",
-        su: "success",
-        w: "warning",
-        d: "danger",
-        g: "grey",
-        b: "black"
-	};
-	if (color.slice(0, 1) === "p") {
-		return themeColor.p;
-	}
-	if (color.slice(0, 1) === "s") {
-		return themeColor.s;
-	}
-	if (color.slice(0, 1) === "t") {
-		return themeColor.t;
-	}
-    if (color.slice(0, 1) === "a") {
-		return themeColor.a;
-	}
-	if (color.slice(0, 1) === "su") {
-		return themeColor.su;
-	}
-	if (color.slice(0, 1) === "w") {
-		return themeColor.w;
-	}
-    if (color.slice(0, 1) === "d") {
-		return themeColor.d;
-	}
-	if (color.slice(0, 1) === "g") {
-		return themeColor.g;
-	}
-	if (color.slice(0, 1) === "b") {
-		return themeColor.b;
-	}
-}
+import { getThemeColor } from "../colors/UtilityFunction";
 
 // h1
 export const Heading1 = ({ color, children }) => {
@@ -88,10 +49,10 @@ export const Heading5 = ({ color, children }) => {
 	);
 };
 //paragraph
-export const Paragraph = ({ color, children, Font_size, Text_transform }) => {
+export const Paragraph = ({ color, children, fontSize, textTransform }) => {
 	const colorCode = getThemeColor(color);
 	return (
-		<p style={{ color: `${colors[colorCode][color]}`, fontSize:`${Font_size}` , textTransform:`${Text_transform}` }}>
+		<p style={{ color: `${colors[colorCode][color]}`, fontSize:`${fontSize}` , textTransform:`${textTransform}` }}>
 			{children}
 		</p>
 	);

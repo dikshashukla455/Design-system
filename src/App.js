@@ -7,6 +7,7 @@ import {
 	Heading5,
 	Paragraph,
 } from "./components/typography/Typography";
+import Button from "./components/Buttons/Button";
 
 function App() {
 	return (
@@ -50,8 +51,12 @@ function App() {
 					</Paragraph>
 				</dd>
 			</dl>
-			<p style={{ fontSize: "25px" }}>Colors</p>
+			<p style={{ fontSize: "30px" }}>Colors</p>
 			<Color />
+      <p style={{ fontSize: "40px" }}>Buttons</p>
+      <span>Solid:</span><Button type="secondary" variant="default">Click Me</Button>
+      <span>Outlined:</span><Button variant="outlined">Click Me</Button>
+      <span>None:</span><Button variant="transparent">Click Me</Button>
 		</div>
 	);
 }
