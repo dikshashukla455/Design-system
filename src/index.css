@@ -1,38 +1,38 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+		"Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+		sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+		monospace;
 }
-body{
-  margin-left: 30px;
+body {
+	margin-left: 30px;
 }
-button{
-  font-size:12px;
-  padding: 10px 15px;
-  border: none;
-  font-weight: 500;
-  border-radius: 4px;
-  margin-left: 10px;
-  margin-bottom: 10px;
+button {
+	font-size: 12px;
+	padding: 10px 15px;
+	border: none;
+	font-weight: 500;
+	border-radius: 4px;
+	margin-left: 10px;
+	margin-bottom: 10px;
 }
-.buttonNone{
-color: black !important;
-background: transparent;
+.buttonNone {
+	color: black !important;
+	background: transparent;
 }
-.buttonOutline{
-  color: black !important;
-  background: transparent;
-  border:1px solid #989CA2;
-  box-shadow: 0px 1px 6px rgba(93, 95, 99, 0.25);;
+.buttonOutline {
+	color: black !important;
+	background: transparent;
+	border: 1px solid #989ca2;
+	box-shadow: 0px 1px 6px rgba(93, 95, 99, 0.25);
 }
-span{
-  margin-left:10px;
+span {
+	margin-left: 10px;
 }

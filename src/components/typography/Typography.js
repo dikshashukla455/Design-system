@@ -3,9 +3,9 @@ import { getThemeColor } from "../colors/UtilityFunction";
 
 // h1
 export const Heading1 = ({ color, children }) => {
-    console.log(colors);
+	console.log(colors);
 	const colorCode = getThemeColor(color);
-    console.log(colorCode);
+	console.log(colorCode);
 	return (
 		<h1 style={{ color: `${colors[colorCode][color]}` }}>
 			{children} {colorCode}
@@ -52,7 +52,13 @@ export const Heading5 = ({ color, children }) => {
 export const Paragraph = ({ color, children, fontSize, textTransform }) => {
 	const colorCode = getThemeColor(color);
 	return (
-		<p style={{ color: `${colors[colorCode][color]}`, fontSize:`${fontSize}` , textTransform:`${textTransform}` }}>
+		<p
+			style={{
+				color: `${colors[colorCode][color]}`,
+				fontSize: `${fontSize}`,
+				textTransform: `${textTransform}`,
+			}}
+		>
 			{children}
 		</p>
 	);

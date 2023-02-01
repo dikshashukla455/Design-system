@@ -3,38 +3,40 @@ export function getThemeColor(color) {
 		p: "primary",
 		s: "secondary",
 		t: "tertiary",
-        a: "accent",
-        su: "success",
-        w: "warning",
-        d: "danger",
-        g: "grey",
-        b: "black"
+		a: "accent",
+		su: "success",
+		w: "warning",
+		d: "danger",
+		g: "grey",
+		b: "black",
 	};
-	if (color.slice(0, 1) === "p") { // primary
-		return themeColor.p;
-	}
-	if (color.slice(0, 1) === "s") { // secondary
-		return themeColor.s;
-	}
-	if (color.slice(0, 1) === "t") { // tertiary
-		return themeColor.t;
-	}
-    if (color.slice(0, 1) === "a") { // accent
-		return themeColor.a;
-	}
-	if (color.slice(0, 1) === "su") { // success
-		return themeColor.su;
-	}
-	if (color.slice(0, 1) === "w") { // warning
-		return themeColor.w;
-	}
-    if (color.slice(0, 1) === "d") { // danger
-		return themeColor.d;
-	}
-	if (color.slice(0, 1) === "g") { // grey
-		return themeColor.g;
-	}
-	if (color.slice(0, 1) === "b") { // black
-		return themeColor.b;
+	switch (color.slice(0, 1)) {
+		case "p":
+			return themeColor.p;
+			break;
+		case "s":
+			return themeColor.s;
+			break;
+		case "t":
+			return themeColor.t;
+			break;
+		case "a":
+			return themeColor.a;
+			break;
+		case "su":
+			return themeColor.su;
+			break;
+		case "w":
+			return themeColor.w;
+			break;
+		case "d":
+			return themeColor.d;
+			break;
+		case "g":
+			return themeColor.g;
+			break;
+		case "b":
+			return themeColor.b;
+			break;
 	}
 }

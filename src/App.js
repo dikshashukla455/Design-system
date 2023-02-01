@@ -22,41 +22,46 @@ function App() {
 			<dl>
 				<dt>Uppercase and large</dt>
 				<dd>
-					<Paragraph color="b300" Font_size="large" Text_transform="uppercase">
+					<Paragraph color="b300" fontSize="large" textTransform="uppercase">
 						This is a paragraph component.
 					</Paragraph>
 				</dd>
 				<dt>Uppercase and small</dt>
 				<dd>
-					<Paragraph color="b300" Font_size="small" Text_transform="uppercase">
+					<Paragraph color="b300" fontSize="small" textTransform="uppercase">
 						This is a paragraph component.
 					</Paragraph>
 				</dd>
 				<dt>Lowercase and large</dt>
 				<dd>
-					<Paragraph color="b300" Font_size="large" Text_transform="Lowercase">
+					<Paragraph color="b300" fontSize="large" textTransform="Lowercase">
 						This is a paragraph component.
 					</Paragraph>
 				</dd>
 				<dt>Lowercase and small</dt>
 				<dd>
-					<Paragraph color="b300" Font_size="small" Text_transform="Lowercase">
+					<Paragraph color="b300" fontSize="small" textTransform="Lowercase">
 						This is a paragraph component.
 					</Paragraph>
 				</dd>
 				<dt>Capitalize and default</dt>
 				<dd>
-					<Paragraph color="b300" Text_transform="capitalize">
+					<Paragraph color="b300" textTransform="capitalize">
 						This is a paragraph component.
 					</Paragraph>
 				</dd>
 			</dl>
 			<p style={{ fontSize: "30px" }}>Colors</p>
 			<Color />
-      <p style={{ fontSize: "40px" }}>Buttons</p>
-      <span>Solid:</span><Button type="secondary" variant="default">Click Me</Button>
-      <span>Outlined:</span><Button variant="outlined">Click Me</Button>
-      <span>None:</span><Button variant="transparent">Click Me</Button>
+			<p style={{ fontSize: "40px" }}>Buttons</p>
+			<span>Solid:</span>
+			<Button type="secondary" variant="default">
+				Click Me
+			</Button>
+			<span>Outlined:</span>
+			<Button variant="outlined">Click Me</Button>
+			<span>None:</span>
+			<Button variant="transparent">Click Me</Button>
 		</div>
 	);
 }
