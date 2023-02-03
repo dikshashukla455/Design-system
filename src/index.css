@@ -36,3 +36,6 @@ button {
 span {
 	margin-left: 10px;
 }
+::placeholder{
+	color:#C3C6C9;
+}

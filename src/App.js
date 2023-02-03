@@ -8,6 +8,7 @@ import {
 	Paragraph,
 } from "./components/typography/Typography";
 import Button from "./components/Buttons/Button";
+import {TextField,TextArea} from "./components/TextField/TextField";
 
 function App() {
 	return (
@@ -55,13 +56,42 @@ function App() {
 			<Color />
 			<p style={{ fontSize: "40px" }}>Buttons</p>
 			<span>Solid:</span>
-			<Button type="secondary" variant="default">
+			<Button type="success" variant="default">
 				Click Me
 			</Button>
 			<span>Outlined:</span>
 			<Button variant="outlined">Click Me</Button>
 			<span>None:</span>
 			<Button variant="transparent">Click Me</Button>
+			<p style={{ fontSize: "35px" }}>Text Field</p>
+			<TextField
+				inputType="text"
+				placeholderText="Enter your field"
+				label="Label"
+				description="This is a description"
+				focusColor="p300"
+			/>
+			<TextField
+				inputType="number"
+				placeholderText="Enter your field"
+				label="Label"
+				description="This is a description"
+				variant="disabled"
+			/>
+			<p style={{ fontSize: "35px" }}>Textarea</p>
+			<TextArea 
+				placeholderText="Enter something"
+				label="Label"
+				description="This is a Textarea description"
+				textareaFocusColor="a500"
+			/>
+			<TextArea 
+				placeholderText="Enter something"
+				label="Label"
+				description="This is a Textarea description"
+				textareaFocusColor="s500"
+				variant="disabled"
+			/>
 		</div>
 	);
 }
