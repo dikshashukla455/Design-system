@@ -36,6 +36,41 @@ button {
 span {
 	margin-left: 10px;
 }
-::placeholder{
-	color:#C3C6C9;
+::placeholder {
+	color: #c3c6c9;
+}
+select {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	background: transparent;
+	background-image: url("./Vector\ \(6\).svg");
+	background-repeat: no-repeat;
+	background-position-x: 95%;
+	background-position-y: 12px;
+	border: 1px solid #dfdfdf;
+	border-radius: 2px;
+	margin-right: 2rem;
+}
+option[value=""][selected] {
+	color: #c3c6c9;
+}
+input[type="file"] {
+    display: none;
+}
+.custom_file_upload{
+	border: 1px solid #C3C6C9;
+    display: inline-block;
+    padding: 24px 50px;
+	font-size: 14px;
+	font-weight:500;
+    cursor: pointer;
+	text-align: center;
+	border-radius: 4px;
+	border-style:dashed
+
+}
+.tagBlock{
+	display: inline-block;
+	padding:3px 10px;
+	margin-right:10px;
 }

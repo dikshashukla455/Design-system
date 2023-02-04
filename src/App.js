@@ -8,8 +8,10 @@ import {
 	Paragraph,
 } from "./components/typography/Typography";
 import Button from "./components/Buttons/Button";
-import {TextField,TextArea} from "./components/TextField/TextField";
-
+import { TextField, TextArea } from "./components/TextField/TextField";
+import Dropdown from "./components/TextField/Dropdown";
+import UploadFile from "./components/TextField/UploadFile";
+import Tag from "./components/Tags/Tag";
 function App() {
 	return (
 		<div className="App">
@@ -56,7 +58,7 @@ function App() {
 			<Color />
 			<p style={{ fontSize: "40px" }}>Buttons</p>
 			<span>Solid:</span>
-			<Button type="success" variant="default">
+			<Button type="danger" variant="default">
 				Click Me
 			</Button>
 			<span>Outlined:</span>
@@ -79,19 +81,55 @@ function App() {
 				variant="disabled"
 			/>
 			<p style={{ fontSize: "35px" }}>Textarea</p>
-			<TextArea 
+			<TextArea
 				placeholderText="Enter something"
 				label="Label"
 				description="This is a Textarea description"
 				textareaFocusColor="a500"
 			/>
-			<TextArea 
+			<TextArea
 				placeholderText="Enter something"
 				label="Label"
 				description="This is a Textarea description"
 				textareaFocusColor="s500"
 				variant="disabled"
 			/>
+			<p style={{ fontSize: "35px" }}>Dropdown</p>
+			<Dropdown
+				label="Label"
+				description="This is a Dropdown description"
+				placeholder="Choose your vehicle"
+				Option1="Bus"
+				Option2="Car"
+				Option3="Cycle"
+				Option4="Bike"
+				focusColor="w500"
+			/>
+			<br />
+			<Dropdown
+				label="Label"
+				description="This is a disabled dropdown description"
+				variant="disabled"
+				placeholder="Select item"
+			/>
+			<p style={{ fontSize: "35px" }}>Upload File</p>
+			<UploadFile
+				label="Label"
+				description="Max file size is 2mb. Supported files are .csv and .xls"
+				acceptFiles=".pdf"
+			/>
+			<br />
+			<UploadFile
+				label="Label"
+				description="Max file size is 2mb. Supported files are .csv and .xls"
+				variant="disabled"
+				
+			/>
+			<p style={{ fontSize: "35px" }}>Tags</p>
+			<Tag variant="solid" variantShape="rounded" tagName="red"/>
+			<Tag variant="solid" variantShape="rectangle" tagName="blue"/>
+			<Tag variant="outlined" variantShape="rounded" tagName="orange"/>
+			<Tag variant="outlined" variantShape="rectangle" tagName="green"/>
 		</div>
 	);
 }

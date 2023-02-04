@@ -1,3 +1,5 @@
+import { colors } from "../Data/ColorData";
+
 export function getThemeColor(color) {
 	const themeColor = {
 		p: "primary",
@@ -37,6 +39,38 @@ export function getThemeColor(color) {
 			break;
 		case "b":
 			return themeColor.b;
+			break;
+	}
+}
+
+export function ButtonType(type) {
+	switch (type) {
+		case "primary":
+			return colors.primary.p300;
+			break;
+		case "secondary":
+			return colors.secondary.s300;
+			break;
+		case "tertiary":
+			return colors.tertiary.t300;
+			break;
+		case "accent":
+			return colors.accent.a300;
+			break;
+		case "success":
+			return colors.success.s300;
+			break;
+		case "warning":
+			return colors.warning.w300;
+			break;
+		case "danger":
+			return colors.danger.d300;
+			break;
+		case "grey":
+			return colors.grey.g300;
+			break;
+		case "black":
+			return colors.black.b300;
 			break;
 	}
 }
