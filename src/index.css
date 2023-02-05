@@ -72,5 +72,38 @@ input[type="file"] {
 .tagBlock{
 	display: inline-block;
 	padding:3px 10px;
-	margin-right:10px;
+	margin-right:30px;
+}
+.radio_input,.check_input{
+	display: none;
+}
+.check_input:checked ~ .checkmark{
+	border: none;
+	background-color: aqua;
+}
+.checkbox .checkmark{
+    display: inline-block;
+	position: relative;
+	margin-right: 5px;
+	width: 20px;
+	height: 20px;
+	cursor: pointer;
+	border: 1px solid #C3C6C9;
+	border-radius: 2px;
+}
+.check_input:checked ~ .checkmark::after {
+	content: "";
+	display: block;
+    color: aliceblue;
+	width: 12px;
+	height: 6px;
+    border-left: 2px solid white;
+    border-bottom: 2px solid white;
+	position: absolute;
+	left: 50%;
+	top: 40%;
+	transform: translate(-50%, -50%) rotate(-45deg);
+}
+.checkbox .checkmark:focus-visible{
+    outline: 5px solid black;
 }

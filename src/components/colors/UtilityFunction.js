@@ -74,3 +74,59 @@ export function ButtonType(type) {
 			break;
 	}
 }
+export function DarkTagColor(type) {
+	switch (type) {
+		case "primary":
+			return colors.primary.p500;
+			break;
+		case "secondary":
+			return colors.secondary.s400;
+			break;
+		case "tertiary":
+			return colors.tertiary.t400;
+			break;
+		case "accent":
+			return colors.accent.a400;
+			break;
+		case "success":
+			return colors.success.s400;
+			break;
+		case "warning":
+			return colors.warning.w400;
+			break;
+		case "danger":
+			return colors.danger.d400;
+			break;
+		case "grey":
+			return colors.grey.g400;
+			break;
+	}
+}
+export function LightTagColor(type) {
+	switch (type) {
+		case "primary":
+			return colors.primary.p75;
+			break;
+		case "secondary":
+			return colors.secondary.s75;
+			break;
+		case "tertiary":
+			return colors.tertiary.t75;
+			break;
+		case "accent":
+			return colors.accent.a75;
+			break;
+		case "success":
+			return colors.success.s75;
+			break;
+		case "warning":
+			return colors.warning.w75;
+			break;
+		case "danger":
+			return colors.danger.d75;
+			break;
+		case "grey":
+			return colors.grey.g75;
+			break;
+	}
+}

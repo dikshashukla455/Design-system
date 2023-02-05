@@ -7,6 +7,7 @@ import { getThemeColor } from "../colors/UtilityFunction";
 function UploadFile({ label, description, variant, acceptFiles, focusColor }) {
 	const backgroundVariant = variant === "disabled" ? "#F5F5F6" : "#ffffff";
 	const colorVariant = variant === "disabled" ? "#989CA2" : "#000000";
+	const errorVariant = variant === "error" ? "#E84A4A" : "#C3C6C9";
 
 	return (
 		<>
@@ -39,11 +40,30 @@ function UploadFile({ label, description, variant, acceptFiles, focusColor }) {
 						backgroundColor: `${backgroundVariant}`,
 						color: `${colorVariant}`,
 						//outlineColor: `${colors[colorCode][focusColor]}`,
+						borderColor:`${errorVariant}`
 					}}
 				>
-					{variant==="disabled" ? <img src={DisabledImg} /> : <img src={UploadImg} />} <br /> Drag and drop file here <br /> or{" "}
-					<br /> Click to browse files
+					{variant === "disabled" ? (
+						<img src={DisabledImg} />
+					) : (
+						<img src={UploadImg} />
+					)}{" "}
+					<br /> Drag and drop file here <br /> or <br /> Click to browse files
 				</label>
+
+				{variant === "error" && (
+					<p
+						style={{
+							color: "#E84A4A",
+							fontSize: "16px",
+							fontWeight: "500",
+							lineHeight: "24px",
+						}}
+						className="error"
+					>
+						Error Message
+					</p>
+				)}
 			</form>
 		</>
 	);

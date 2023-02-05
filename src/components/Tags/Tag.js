@@ -1,4 +1,9 @@
 import React from "react";
+import {
+	ButtonType,
+	DarkTagColor,
+	LightTagColor,
+} from "../colors/UtilityFunction";
 
 function Tag({ fontSize, variant, variantShape, tagColor, tagName }) {
 	return (
@@ -6,12 +11,13 @@ function Tag({ fontSize, variant, variantShape, tagColor, tagName }) {
 			{variant === "solid" && variantShape === "rounded" && (
 				<div
 					style={{
-						border: "1px solid red",
+						border: `none`,
 						borderRadius: "100px",
-						backgroundColor: "pink",
-
+						backgroundColor: `${DarkTagColor(tagColor)}`,
+						color: `#ffffff`,
+						fontSize:`${fontSize}`
 					}}
-          className="tagBlock"
+					className="tagBlock"
 				>
 					{tagName}
 				</div>
@@ -19,11 +25,13 @@ function Tag({ fontSize, variant, variantShape, tagColor, tagName }) {
 			{variant === "solid" && variantShape === "rectangle" && (
 				<div
 					style={{
-						border: "1px solid blue",
-						backgroundColor: "green",
-
+						border: "none",
+						borderRadius: "2px",
+						backgroundColor: `${DarkTagColor(tagColor)}`,
+						color: `#ffffff`,
+						fontSize:`${fontSize}`
 					}}
-          className="tagBlock"
+					className="tagBlock"
 				>
 					{tagName}
 				</div>
@@ -31,12 +39,13 @@ function Tag({ fontSize, variant, variantShape, tagColor, tagName }) {
 			{variant === "outlined" && variantShape === "rounded" && (
 				<div
 					style={{
-						border: "1px solid red",
+						border: `1px solid ${DarkTagColor(tagColor)}`,
 						borderRadius: "100px",
-						color: "pink",
-
+						color: `${DarkTagColor(tagColor)}`,
+						backgroundColor: `${LightTagColor(tagColor)}`,
+						fontSize:`${fontSize}`
 					}}
-          className="tagBlock"
+					className="tagBlock"
 				>
 					{tagName}
 				</div>
@@ -44,11 +53,13 @@ function Tag({ fontSize, variant, variantShape, tagColor, tagName }) {
 			{variant === "outlined" && variantShape === "rectangle" && (
 				<div
 					style={{
-						border: "1px solid blue",
-						color: "green",
-
+						border: `1px solid ${DarkTagColor(tagColor)}`,
+						borderRadius: "4px",
+						color: `${DarkTagColor(tagColor)}`,
+						backgroundColor: `${LightTagColor(tagColor)}`,
+						fontSize:`${fontSize}`
 					}}
-          className="tagBlock"
+					className="tagBlock"
 				>
 					{tagName}
 				</div>
