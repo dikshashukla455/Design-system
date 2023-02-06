@@ -11,71 +11,40 @@ export const TextField = ({
 	description,
 	variant,
 }) => {
+	// adding the functionality to handle the errors
 	const [Error, SetError] = useState("");
 	const onErrorHandler = (e) => {
 		SetError(e.target.value);
 	};
-	const setError = Error.length === 0 ? "#E84A4A" : "#C3C6C9";
+	// changing the input border (error)
+	const setError =
+		Error.length === 0 && variant !== "disabled" ? "#E84A4A" : "#C3C6C9";
 	return (
 		<div>
 			<form action="">
-				<label
-					style={{ fontSize: "16px", fontWeight: "500", lineHeight: "24px" }}
-					htmlFor=""
-				>
+				{/* form label */}
+				<label htmlFor="" className="input_label">
 					{label}
 				</label>
-				<p
+				{/* form description */}
+				<p className="input_description">{description}</p>
+				{/* input field with default and disable variant */}
+				<input
+					type={inputType}
+					placeholder={placeholderText}
 					style={{
-						fontSize: "16px",
-						fontWeight: "500",
-						lineHeight: "24px",
-						color: "#6A6D71",
+						padding: "8px 10px",
+						borderColor: `${setError}`,
+						borderRadius: "4px",
+						background: `${variant === "disabled" ? "#F5F5F6" : "#ffffff"}`, // setting the background color based on the variant prop (disable)
+						//outlineColor: `${colors[getThemeColor(focusColor)][focusColor]}`,
 					}}
-				>
-					{description}
-				</p>
-				{variant === "disabled" ? (
-					<input
-						type={inputType}
-						placeholder={placeholderText}
-						style={{
-							padding: "8px 10px",
-							borderColor: `#C3C6C9`,
-							background: "#F5F5F6",
-							borderRadius: "4px",
-						}}
-						disabled
-					/>
-				) : (
-					<>
-						<input
-							type={inputType}
-							placeholder={placeholderText}
-							style={{
-								padding: "8px 10px",
-								borderColor: `${setError}`,
-								borderRadius: "4px",
-								outlineColor: `${
-									colors[getThemeColor(focusColor)][focusColor]
-								}`,
-							}}
-							onChange={onErrorHandler}
-						/>
-						{Error.length === 0 && (
-							<p
-								style={{
-									color: "#E84A4A",
-									fontSize: "16px",
-									fontWeight: "500",
-									lineHeight: "24px",
-								}}
-								className="error"
-							>
-								Error Message
-							</p>
-						)}
-					</>
+					onChange={onErrorHandler}
+					disabled={variant === "disabled" ? true : false} // setting the disabled state based on the variant prop
+				/>
+				{/* setting the error message */}
+				{Error.length === 0 && variant !== "disabled" && (
+					<p className="input_error">Error Message</p>
 				)}
 			</form>
 			<br />
@@ -92,74 +61,45 @@ export const TextArea = ({
 	variant,
 	textareaFocusColor,
 }) => {
+	// adding the functionality to handle the errors
 	const [Error, SetError] = useState("");
 	const onErrorHandler = (e) => {
 		SetError(e.target.value);
 	};
-	const setError = Error.length === 0 ? "#E84A4A" : "#C3C6C9";
+	// changing the input border (error)
+	const setError =
+		Error.length === 0 && variant !== "disabled" ? "#E84A4A" : "#C3C6C9";
 
 	return (
 		<>
 			<form action="">
-				<label
-					style={{ fontSize: "16px", fontWeight: "500", lineHeight: "24px" }}
-					htmlFor=""
-				>
+				{/* form label */}
+				<label htmlFor="" className="input_label">
 					{label}
 				</label>
-				<p
+				{/* form description */}
+				<p className="input_description">{description}</p>
+
+				{/* textarea with default and disable variant */}
+				<textarea
+					cols="35"
+					rows="9"
+					placeholder={placeholderText}
 					style={{
-						fontSize: "16px",
-						fontWeight: "500",
-						lineHeight: "24px",
-						color: "#6A6D71",
+						padding: "8px 10px",
+						borderRadius: "4px",
+						borderColor: `${setError}`,
+						background: `${variant === "disabled" ? "#F5F5F6" : "#ffffff"}`, // setting the background color based on the variant prop (disable)
+						outlineColor: `${
+							colors[getThemeColor(textareaFocusColor)][textareaFocusColor] // setting the outline color based on the prop
+						}`,
 					}}
-				>
-					{description}
-				</p>
-				{variant === "disabled" ? (
-					<textarea
-						cols="35"
-						rows="9"
-						placeholder={placeholderText}
-						style={{
-							padding: "8px 10px",
-							borderRadius: "4px",
-							borderColor: `#C3C6C9`,
-							background: "#F5F5F6",
-						}}
-						disabled
-					></textarea>
-				) : (
-					<>
-						<textarea
-							cols="35"
-							rows="9"
-							placeholder={placeholderText}
-							style={{
-								padding: "8px 10px",
-								borderRadius: "4px",
-								borderColor: `${setError}`,
-								outlineColor: `${
-									colors[getThemeColor(textareaFocusColor)][textareaFocusColor]
-								}`,
-							}}
-							onChange={onErrorHandler}
-						></textarea>
-						{Error.length === 0 && (
-							<p
-								style={{
-									color: "#E84A4A",
-									fontSize: "16px",
-									fontWeight: "500",
-									lineHeight: "24px",
-								}}
-								className="error"
-							>
-								Error Message
-							</p>
-						)}
-					</>
+					onChange={onErrorHandler}
+					disabled={variant === "disabled" ? true : false} // setting the disabled state based on the variant prop
+				></textarea>
+				{/* setting the error message */}
+				{Error.length === 0 && variant !== "disabled" && (
+					<p className="input_error">Error Message</p>
 				)}
 			</form>
 		</>

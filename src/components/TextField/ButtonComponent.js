@@ -8,66 +8,30 @@ export const Checkbox = (checkColor, variant) => {
 		<>
 			{variant === "disabled" ? (
 				<div>
-					<label class="checkbox" for="myCheckbox_one">
+					<label className="checkbox" htmlFor="myCheckbox_one">
 						<input
 							type="checkbox"
-							class="check_input"
+							className="check_input"
 							id="myCheckbox_one"
 							name="myCheckbox"
 							disabled
 						/>
-						<div class="checkmark"></div>
+						<div className="checkmark"></div>
 						default
-					</label>
-					&nbsp;&nbsp;
-					<label class="checkbox" for="myCheckbox_two">
-						<input
-							type="checkbox"
-							class="check_input"
-							id="myCheckbox_two"
-							name="myCheckbox"
-							onChange={() => setChecked(!checked)}
-							checked={checked}
-							disabled
-						/>
-						<div
-							class="checkmark"
-							style={{ backgroundColor: "#c3c6c9" }}
-							//style={{backgroundColor: `${colors[getThemeColor(checkColor)][checkColor]}` }}
-						></div>
-						checked
 					</label>
 				</div>
 			) : (
 				<div>
-					<label class="checkbox" for="myCheckbox_three">
+					<label className="checkbox" htmlFor="myCheckbox_three">
 						<input
 							type="checkbox"
-							class="check_input"
+							className="check_input"
 							id="myCheckbox_three"
-							name="myCheckbox"
+							name="myCheckbox_disable"
 							
 						/>
 						<div class="checkmark"></div>
 						default
-					</label>
-					&nbsp;&nbsp;
-					<label class="checkbox" for="myCheckbox_four">
-						<input
-							type="checkbox"
-							class="check_input"
-							id="myCheckbox_four"
-							name="myCheckbox"
-							onChange={() => setChecked(!checked)}
-							checked={checked}
-						
-						/>
-						<div
-							class="checkmark"
-							style={{ backgroundColor: `${checked && "blue"}` }}
-							//style={{backgroundColor: `${colors[getThemeColor(checkColor)][checkColor]}` }}
-						></div>
-						checked
 					</label>
 				</div>
 			)}

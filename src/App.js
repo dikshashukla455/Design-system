@@ -76,7 +76,7 @@ function App() {
 					placeholderText="Enter your field"
 					label="Label"
 					description="This is a description"
-					focusColor="p300"
+					focusColor="s300"
 				/>
 				<TextField
 					inputType="number"
