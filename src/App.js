@@ -13,15 +13,24 @@ import Dropdown from "./components/TextField/Dropdown";
 import UploadFile from "./components/TextField/UploadFile";
 import Tag from "./components/Tags/Tag";
 import { Checkbox } from "./components/TextField/ButtonComponent";
+
 function App() {
 	return (
 		<div className="App">
+
+			{/*==================== TYPOGRAPHY COMPONENT =======================*/}
 			<p style={{ fontSize: "45px" }}>Typography</p>
+			
+			{/*======== HEADINGS ========*/}
+			
 			<Heading1 color="p300">H1 header on desktop</Heading1>
 			<Heading2 color="d400">H2 header on desktop</Heading2>
 			<Heading3 color="w200">H3 header on desktop</Heading3>
 			<Heading4 color="a100">H4 header on desktop</Heading4>
 			<Heading5 color="t500">H5 header on desktop</Heading5>
+			
+			{/*======== PARAGRAPH (with its variants) ======*/}
+			
 			<h3>Body text</h3>
 			<dl>
 				<dt>Uppercase and large</dt>
@@ -55,17 +64,29 @@ function App() {
 					</Paragraph>
 				</dd>
 			</dl>
+			{/*==================== COLORS COMPONENT ======================= */}
+			
 			<p style={{ fontSize: "30px" }}>Colors</p>
 			<Color />
+			{/*==================== BUTTONS (with its variants) COMPONENT ======================= */}
+			
 			<p style={{ fontSize: "40px" }}>Buttons</p>
 			<span>Solid:</span>
 			<Button type="danger" variant="default">
+				{" "}
+				{/* default varaint*/}
 				Click Me
 			</Button>
 			<span>Outlined:</span>
-			<Button variant="outlined">Click Me</Button>
+			<Button variant="outlined">Click Me</Button> {/* outlined varaint*/}
 			<span>None:</span>
-			<Button variant="transparent">Click Me</Button>
+			<Button variant="transparent" textColor="s400">
+				{" "}
+				{/* without border (transparent) varaint*/}
+				Click Me
+			</Button>
+			{/*==================== TEXT FIELD COMPONENT ======================= */}
+			
 			<p style={{ fontSize: "35px" }}>Text Field</p>
 			<div
 				className=""
@@ -78,6 +99,7 @@ function App() {
 					description="This is a description"
 					focusColor="s300"
 				/>
+				{/* Disable variant */}
 				<TextField
 					inputType="number"
 					placeholderText="Enter your field"
@@ -86,6 +108,8 @@ function App() {
 					variant="disabled"
 				/>
 			</div>
+			{/*==================== TEXTAREA COMPONENT ======================= */}
+			
 			<p style={{ fontSize: "35px" }}>Textarea</p>
 			<div
 				className=""
@@ -97,6 +121,7 @@ function App() {
 					description="This is a Textarea description"
 					textareaFocusColor="a500"
 				/>
+				{/* disable variant */}
 				<TextArea
 					placeholderText="Enter something"
 					label="Label"
@@ -105,6 +130,8 @@ function App() {
 					variant="disabled"
 				/>
 			</div>
+			{/*==================== DROPDOWN COMPONENT ======================= */}
+			
 			<p style={{ fontSize: "35px" }}>Dropdown</p>
 			<div
 				className=""
@@ -120,7 +147,7 @@ function App() {
 					Option4="Bike"
 					focusColor="w500"
 				/>
-
+				{/* disable variant */}
 				<Dropdown
 					label="Label"
 					description="This is a disabled dropdown description"
@@ -128,6 +155,8 @@ function App() {
 					placeholder="Select item"
 				/>
 			</div>
+			{/*==================== UPLOAD FILE COMPONENT ======================= */}
+			
 			<p style={{ fontSize: "35px" }}>Upload File</p>
 			<div
 				className=""
@@ -138,19 +167,23 @@ function App() {
 					description="Max file size is 2mb. Supported files are .csv and .xls   "
 					acceptFiles=".pdf"
 				/>
+				{/*disable variant*/}
 				<UploadFile
 					label="Label"
 					description="Max file size is 2mb. Supported files are .csv and .xls    "
 					variant="disabled"
 				/>
+				{/**error variant */}
 				<UploadFile
 					label="Label"
 					description="Max file size is 2mb. Supported files are .csv and .xls "
 					variant="error"
 				/>
 			</div>
+			{/*==================== TAGS COMPONENT ======================= */}
+			
 			<p style={{ fontSize: "35px" }}>Tags</p>
-			Solid:{" "}
+			Solid: {/* solid and rounded variant */}
 			<Tag
 				variant="solid"
 				variantShape="rounded"
@@ -165,6 +198,7 @@ function App() {
 				tagColor="primary"
 				fontSize="12px"
 			/>
+			{/* solid and rectangle variant */}
 			<Tag
 				variant="solid"
 				variantShape="rectangle"
@@ -179,6 +213,7 @@ function App() {
 				tagColor="success"
 				fontSize="12px"
 			/>
+			{/* solid and rounded variant */}
 			<Tag
 				variant="solid"
 				variantShape="rounded"
@@ -193,6 +228,7 @@ function App() {
 				tagColor="tertiary"
 				fontSize="12px"
 			/>
+			{/* solid and rectangle variant */}
 			<Tag
 				variant="solid"
 				variantShape="rectangle"
@@ -209,7 +245,7 @@ function App() {
 			/>
 			<br />
 			<br />
-			Outlined:{" "}
+			Outlined: {/* outlined and rounded variant */}
 			<Tag
 				variant="outlined"
 				variantShape="rounded"
@@ -224,6 +260,7 @@ function App() {
 				tagColor="primary"
 				fontSize="12px"
 			/>
+			{/* outlined and rectangle variant */}
 			<Tag
 				variant="outlined"
 				variantShape="rectangle"
@@ -238,6 +275,7 @@ function App() {
 				tagColor="success"
 				fontSize="12px"
 			/>
+			{/* outlined and rounded variant */}
 			<Tag
 				variant="outlined"
 				variantShape="rounded"
@@ -252,6 +290,7 @@ function App() {
 				tagColor="tertiary"
 				fontSize="12px"
 			/>
+			{/* outlined and rectangle variant */}
 			<Tag
 				variant="outlined"
 				variantShape="rectangle"
@@ -266,9 +305,15 @@ function App() {
 				tagColor="grey"
 				fontSize="12px"
 			/>
+
+			{/*==================== CHECKBOX COMPONENT ======================= */}
+			
 			<p style={{ fontSize: "35px" }}>Tags</p>
 			<Checkbox checkColor="s500" />
 			<Checkbox variant="disabled" />
+			{/*==================== ALERT COMPONENT ======================= */}
+			{/*==================== BANNER COMPONENT ======================= */}
+			{/*==================== TOOLTIP COMPONENT ======================= */}
 		</div>
 	);
 }

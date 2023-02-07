@@ -1,14 +1,12 @@
 import { colors } from "../Data/ColorData";
 import { getThemeColor } from "../colors/UtilityFunction";
 
-// h1
+// h1 (high font size)
 export const Heading1 = ({ color, children }) => {
-	console.log(colors);
 	const colorCode = getThemeColor(color);
-	console.log(colorCode);
 	return (
-		<h1 style={{ color: `${colors[colorCode][color]}` }}>
-			{children} {colorCode}
+		<h1 style={{ color: `${colors[colorCode][color]}` }}> {/* text color based on the user input */}
+			{children} {colorCode} {/* user pass data and showing the color code(optional) */}
 		</h1>
 	);
 };
@@ -39,7 +37,7 @@ export const Heading4 = ({ color, children }) => {
 		</h4>
 	);
 };
-// h5
+// h5 (less font size)
 export const Heading5 = ({ color, children }) => {
 	const colorCode = getThemeColor(color);
 	return (
@@ -55,8 +53,8 @@ export const Paragraph = ({ color, children, fontSize, textTransform }) => {
 		<p
 			style={{
 				color: `${colors[colorCode][color]}`,
-				fontSize: `${fontSize}`,
-				textTransform: `${textTransform}`,
+				fontSize: `${fontSize}`, // font size based on the user input
+				textTransform: `${textTransform}`, // uppercase, lowercase , capitalize of the text based on the user input
 			}}
 		>
 			{children}

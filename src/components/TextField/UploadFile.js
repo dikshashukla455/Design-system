@@ -5,64 +5,47 @@ import { colors } from "../Data/ColorData";
 import { getThemeColor } from "../colors/UtilityFunction";
 
 function UploadFile({ label, description, variant, acceptFiles, focusColor }) {
-	const backgroundVariant = variant === "disabled" ? "#F5F5F6" : "#ffffff";
-	const colorVariant = variant === "disabled" ? "#989CA2" : "#000000";
-	const errorVariant = variant === "error" ? "#E84A4A" : "#C3C6C9";
-
 	return (
 		<>
 			<form action="">
-				<label
-					style={{ fontSize: "16px", fontWeight: "500", lineHeight: "24px" }}
-					htmlFor=""
-				>
+				{/* form label */}
+				<label htmlFor="" className="input_label">
 					{label}
 				</label>
-				<p
-					style={{
-						fontSize: "16px",
-						fontWeight: "500",
-						lineHeight: "24px",
-						color: "#6A6D71",
-					}}
-				>
-					{description}
-				</p>
-				{variant === "disabled" ? (
-					<input type="file" accept="" id="contained-button-file" disabled />
-				) : (
-					<input type="file" id="contained-button-file" accept={acceptFiles} />
-				)}
+				{/* form description */}
+				<p className="input_description">{description}</p>
+
+				{/* dropdown with default and disable variant */}
+				{/* file upload input */}
+				<input
+					type="file"
+					id="contained-button-file"
+					accept={acceptFiles} // used to upload specific files
+					disabled={variant === "disabled" ? true : false} // setting the disabled state based on the variant prop
+				/>
+				{/* making the a custom file upload input */}
 				<label
 					htmlFor="contained-button-file"
 					className="custom_file_upload"
 					style={{
-						backgroundColor: `${backgroundVariant}`,
-						color: `${colorVariant}`,
-						//outlineColor: `${colors[colorCode][focusColor]}`,
-						borderColor:`${errorVariant}`
+						backgroundColor: `${
+							variant === "disabled" ? "#F5F5F6" : "#ffffff" //  backgound color based on the variant prop (disable)
+						}`,
+						color: `${variant === "disabled" ? "#989CA2" : "#000000"}`,
+						//outlineColor: `${colors[getThemeColor(focusColor)][focusColor]}`, // !! ERROR: page not shown
+						borderColor: `${variant === "error" ? "#E84A4A" : "#C3C6C9"}`,
 					}}
 				>
 					{variant === "disabled" ? (
-						<img src={DisabledImg} />
+						<img src={DisabledImg} /> // upload image for the disabled variant
 					) : (
-						<img src={UploadImg} />
+						<img src={UploadImg} /> // upload image for the default
 					)}{" "}
 					<br /> Drag and drop file here <br /> or <br /> Click to browse files
 				</label>
-
-				{variant === "error" && (
-					<p
-						style={{
-							color: "#E84A4A",
-							fontSize: "16px",
-							fontWeight: "500",
-							lineHeight: "24px",
-						}}
-						className="error"
-					>
-						Error Message
-					</p>
+				{/* setting the error message */}
+				{variant === "error" && variant !== "disabled" && (
+					<p className="input_error">Error Message</p>
 				)}
 			</form>
 		</>

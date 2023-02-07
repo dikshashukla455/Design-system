@@ -1,5 +1,7 @@
 import { colors } from "../Data/ColorData";
 
+// fetching the category of the color by their colorcodes
+// !! showing error
 export function getThemeColor(color) {
 	const themeColor = {
 		p: "primary",
@@ -12,7 +14,7 @@ export function getThemeColor(color) {
 		g: "grey",
 		b: "black",
 	};
-	switch (color.slice(0, 1)) {
+	switch (color.charAt()) {
 		case "p":
 			return themeColor.p;
 			break;
@@ -43,6 +45,7 @@ export function getThemeColor(color) {
 	}
 }
 
+// fetching the type of the button background color by their colorcodes
 export function ButtonType(type) {
 	switch (type) {
 		case "primary":
@@ -74,6 +77,7 @@ export function ButtonType(type) {
 			break;
 	}
 }
+// fetching the dark color for the text color and border color of the outlined variant tag, background color of the solid variant tags
 export function DarkTagColor(type) {
 	switch (type) {
 		case "primary":
@@ -102,6 +106,7 @@ export function DarkTagColor(type) {
 			break;
 	}
 }
+// fetching the light color for the background color of the outlined varaint tags
 export function LightTagColor(type) {
 	switch (type) {
 		case "primary":

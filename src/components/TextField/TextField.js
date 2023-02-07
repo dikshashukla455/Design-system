@@ -37,7 +37,7 @@ export const TextField = ({
 						borderColor: `${setError}`,
 						borderRadius: "4px",
 						background: `${variant === "disabled" ? "#F5F5F6" : "#ffffff"}`, // setting the background color based on the variant prop (disable)
-						//outlineColor: `${colors[getThemeColor(focusColor)][focusColor]}`,
+						//outlineColor: `${colors[getThemeColor(focusColor)][focusColor]}`,  // !! ERROR: page not shown
 					}}
 					onChange={onErrorHandler}
 					disabled={variant === "disabled" ? true : false} // setting the disabled state based on the variant prop
