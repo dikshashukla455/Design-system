@@ -12,7 +12,8 @@ import { TextField, TextArea } from "./components/TextField/TextField";
 import Dropdown from "./components/TextField/Dropdown";
 import UploadFile from "./components/TextField/UploadFile";
 import Tag from "./components/Tags/Tag";
-import { Checkbox } from "./components/TextField/ButtonComponent";
+import { Checkbox,Radio,Toggle } from "./components/TextField/ButtonComponent";
+import Banner from "./components/Banner/Banner";
 
 function App() {
 	return (
@@ -306,13 +307,28 @@ function App() {
 				fontSize="12px"
 			/>
 
-			{/*==================== CHECKBOX COMPONENT ======================= */}
+			{/*==================== INPUT FIELD BUTTONS COMPONENT ======================= */}
+			{/* checkbox */}
+			<p style={{ fontSize: "20px" }}>Checkbox</p>
+			default: <Checkbox checkColor="accent" />
+			disabled: <Checkbox variant="disabled" />
+			{/* radio */}
+			<p style={{ fontSize: "20px" }}>Radio</p>
+			default: <Radio />
+			disabled: <Radio variant="disabled" />
+			{/* toggle */}
+			<p style={{ fontSize: "20px" }}>Toggle</p>
+			default: <Toggle checkColor="success"/>
+			disabled: <Toggle variant="disabled" />
 			
-			<p style={{ fontSize: "35px" }}>Tags</p>
-			<Checkbox checkColor="s500" />
-			<Checkbox variant="disabled" />
 			{/*==================== ALERT COMPONENT ======================= */}
 			{/*==================== BANNER COMPONENT ======================= */}
+
+			<p style={{ fontSize: "35px" }}>Banner</p>
+			{/* Default variant (simply by clicking on the banner) */}
+			<Banner bannerText="This is an inline banner." BannerColor="primary"/>
+			{/* adding the cross (to close by clicking on it) based on the crossed variant  */}
+			<Banner bannerText="This is an inline banner." BannerColor="warning" variant="crossed"/>
 			{/*==================== TOOLTIP COMPONENT ======================= */}
 		</div>
 	);
