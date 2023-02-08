@@ -12,26 +12,26 @@ import { TextField, TextArea } from "./components/TextField/TextField";
 import Dropdown from "./components/TextField/Dropdown";
 import UploadFile from "./components/TextField/UploadFile";
 import Tag from "./components/Tags/Tag";
-import { Checkbox,Radio,Toggle } from "./components/TextField/ButtonComponent";
+import {
+	Checkbox,
+	Radio,
+	Toggle,
+} from "./components/TextField/ButtonComponent";
 import Banner from "./components/Banner/Banner";
+import Alert from "./components/Alerts/Alert";
 
 function App() {
 	return (
 		<div className="App">
-
 			{/*==================== TYPOGRAPHY COMPONENT =======================*/}
 			<p style={{ fontSize: "45px" }}>Typography</p>
-			
 			{/*======== HEADINGS ========*/}
-			
 			<Heading1 color="p300">H1 header on desktop</Heading1>
 			<Heading2 color="d400">H2 header on desktop</Heading2>
 			<Heading3 color="w200">H3 header on desktop</Heading3>
 			<Heading4 color="a100">H4 header on desktop</Heading4>
 			<Heading5 color="t500">H5 header on desktop</Heading5>
-			
 			{/*======== PARAGRAPH (with its variants) ======*/}
-			
 			<h3>Body text</h3>
 			<dl>
 				<dt>Uppercase and large</dt>
@@ -66,11 +66,9 @@ function App() {
 				</dd>
 			</dl>
 			{/*==================== COLORS COMPONENT ======================= */}
-			
 			<p style={{ fontSize: "30px" }}>Colors</p>
 			<Color />
 			{/*==================== BUTTONS (with its variants) COMPONENT ======================= */}
-			
 			<p style={{ fontSize: "40px" }}>Buttons</p>
 			<span>Solid:</span>
 			<Button type="danger" variant="default">
@@ -87,7 +85,6 @@ function App() {
 				Click Me
 			</Button>
 			{/*==================== TEXT FIELD COMPONENT ======================= */}
-			
 			<p style={{ fontSize: "35px" }}>Text Field</p>
 			<div
 				className=""
@@ -110,7 +107,6 @@ function App() {
 				/>
 			</div>
 			{/*==================== TEXTAREA COMPONENT ======================= */}
-			
 			<p style={{ fontSize: "35px" }}>Textarea</p>
 			<div
 				className=""
@@ -121,6 +117,8 @@ function App() {
 					label="Label"
 					description="This is a Textarea description"
 					textareaFocusColor="a500"
+					cols="35"
+					rows="9"
 				/>
 				{/* disable variant */}
 				<TextArea
@@ -129,10 +127,11 @@ function App() {
 					description="This is a Textarea description"
 					textareaFocusColor="s500"
 					variant="disabled"
+					cols="35"
+					rows="9"
 				/>
 			</div>
 			{/*==================== DROPDOWN COMPONENT ======================= */}
-			
 			<p style={{ fontSize: "35px" }}>Dropdown</p>
 			<div
 				className=""
@@ -157,7 +156,6 @@ function App() {
 				/>
 			</div>
 			{/*==================== UPLOAD FILE COMPONENT ======================= */}
-			
 			<p style={{ fontSize: "35px" }}>Upload File</p>
 			<div
 				className=""
@@ -182,7 +180,6 @@ function App() {
 				/>
 			</div>
 			{/*==================== TAGS COMPONENT ======================= */}
-			
 			<p style={{ fontSize: "35px" }}>Tags</p>
 			Solid: {/* solid and rounded variant */}
 			<Tag
@@ -306,29 +303,66 @@ function App() {
 				tagColor="grey"
 				fontSize="12px"
 			/>
-
 			{/*==================== INPUT FIELD BUTTONS COMPONENT ======================= */}
 			{/* checkbox */}
 			<p style={{ fontSize: "20px" }}>Checkbox</p>
-			default: <Checkbox checkColor="accent" />
-			disabled: <Checkbox variant="disabled" />
+			<div className="" style={{ display: "flex", alignItems: "center" }}>
+				<Checkbox checkColor="accent" />
+				<p> default</p>
+				<Checkbox variant="disabled" />
+				<p>disabled</p>
+			</div>
 			{/* radio */}
 			<p style={{ fontSize: "20px" }}>Radio</p>
-			default: <Radio />
-			disabled: <Radio variant="disabled" />
+			<div className="" style={{ display: "flex", alignItems: "center" }}>
+				<Radio />
+				<p>default </p>
+				<Radio variant="disabled" />
+				<p>disabled </p>
+			</div>
 			{/* toggle */}
 			<p style={{ fontSize: "20px" }}>Toggle</p>
-			default: <Toggle checkColor="success"/>
-			disabled: <Toggle variant="disabled" />
-			
+			<div className="" style={{ display: "flex", alignItems: "center" }}>
+				<Toggle checkColor="success" /> <p> default </p>
+				<Toggle variant="disabled" /> <p> disabled </p>
+			</div>
 			{/*==================== ALERT COMPONENT ======================= */}
+			<p style={{ fontSize: "35px" }}>Alerts</p>
+			<div
+				className=""
+				style={{
+					display: "flex",
+					justifyContent: "space-around",
+					flexWrap: "wrap",
+				}}
+			>
+				{/* information alert type */}
+				<Alert type="information" message="There’s this thing." />
+				{/* success alert type */}
+				<Alert type="success" message="You did the thing!" />
+				{/* error alert type */}
+				<Alert
+					type="error"
+					message="Oh no! Fix the thing before you do it again."
+				/>
+				{/* warning alert type */}
+				<Alert type="warning" message="The thing might happen..." />
+			</div>
 			{/*==================== BANNER COMPONENT ======================= */}
-
 			<p style={{ fontSize: "35px" }}>Banner</p>
-			{/* Default variant (simply by clicking on the banner) */}
-			<Banner bannerText="This is an inline banner." BannerColor="primary"/>
-			{/* adding the cross (to close by clicking on it) based on the crossed variant  */}
-			<Banner bannerText="This is an inline banner." BannerColor="warning" variant="crossed"/>
+			<div
+				className=""
+				style={{ display: "flex", justifyContent: "space-around" }}
+			>
+				{/* Default variant (simply by clicking on the banner) */}
+				<Banner bannerText="This is an inline banner." BannerColor="primary" />
+				{/* adding the cross (to close by clicking on it) based on the crossed variant  */}
+				<Banner
+					bannerText="This is an inline banner."
+					BannerColor="warning"
+					variant="crossed"
+				/>
+			</div>
 			{/*==================== TOOLTIP COMPONENT ======================= */}
 		</div>
 	);

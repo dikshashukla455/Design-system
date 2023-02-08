@@ -12,6 +12,7 @@ function Dropdown({
 	Option2,
 	Option3,
 	Option4,
+	width
 }) {
 	const [Error, SetError] = useState("");
 	const onErrorHandler = (e) => {
@@ -36,12 +37,12 @@ function Dropdown({
 					className="dropdown_arrow" // !! ERROR:not showing the dropdown arrow
 					style={{
 						padding: "8px 10px",
-						width: "200px",
 						borderColor: "#C3C6C9",
 						//outlineColor: `${colors[getThemeColor(focusColor)][focusColor]}`, // !! ERROR: page not shown
 						background: `${variant === "disabled" ? "#F5F5F6" : "transparent"}`, // setting the background color based on the variant prop (disable)
 						borderRadius: "4px",
-						color:"#c3c6c9"
+						color:"#c3c6c9",
+						width:`${width}`
 					}}
 					onChange={onErrorHandler}
 					disabled={variant === "disabled" ? true : false} // setting the disabled state based on the variant prop

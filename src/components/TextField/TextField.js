@@ -10,6 +10,7 @@ export const TextField = ({
 	focusColor,
 	description,
 	variant,
+	width
 }) => {
 	// adding the functionality to handle the errors
 	const [Error, SetError] = useState("");
@@ -37,10 +38,12 @@ export const TextField = ({
 						borderColor: `${setError}`,
 						borderRadius: "4px",
 						background: `${variant === "disabled" ? "#F5F5F6" : "#ffffff"}`, // setting the background color based on the variant prop (disable)
-						//outlineColor: `${colors[getThemeColor(focusColor)][focusColor]}`,  // !! ERROR: page not shown
+						//outlineColor: `${colors[getThemeColor(focusColor)][focusColor]}`, 
+						width:`${width}`
 					}}
 					onChange={onErrorHandler}
 					disabled={variant === "disabled" ? true : false} // setting the disabled state based on the variant prop
+					
 				/>
 				{/* setting the error message */}
 				{Error.length === 0 && variant !== "disabled" && (
@@ -60,6 +63,9 @@ export const TextArea = ({
 	description,
 	variant,
 	textareaFocusColor,
+	cols,
+	rows,
+	width
 }) => {
 	// adding the functionality to handle the errors
 	const [Error, SetError] = useState("");
@@ -82,8 +88,8 @@ export const TextArea = ({
 
 				{/* textarea with default and disable variant */}
 				<textarea
-					cols="35"
-					rows="9"
+					cols={cols}
+					rows={rows}
 					placeholder={placeholderText}
 					style={{
 						padding: "8px 10px",
@@ -93,9 +99,11 @@ export const TextArea = ({
 						outlineColor: `${
 							colors[getThemeColor(textareaFocusColor)][textareaFocusColor] // setting the outline color based on the prop
 						}`,
+						width:`${width}`
 					}}
 					onChange={onErrorHandler}
 					disabled={variant === "disabled" ? true : false} // setting the disabled state based on the variant prop
+					
 				></textarea>
 				{/* setting the error message */}
 				{Error.length === 0 && variant !== "disabled" && (

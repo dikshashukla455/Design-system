@@ -2,7 +2,7 @@ import { React, useState } from "react";
 import { colors } from "../Data/ColorData";
 import { getThemeColor, DarkTagColor } from "../colors/UtilityFunction";
 // ===================== CHECKBOX COMPONENT ==========================
-export const Checkbox = ({ checkColor, variant, label }) => {
+export const Checkbox = ({ checkColor, variant, label, width }) => {
 	const [checked, setChecked] = useState(false); // setting the state for the checkbox initially not checked
 
 	return (
@@ -25,7 +25,8 @@ export const Checkbox = ({ checkColor, variant, label }) => {
 					style={{
 						backgroundColor: `${
 							checked ? DarkTagColor(checkColor) : "" // changing the background color of the checkbox based on the variant
-						} ${variant === "disabled" ? "#f5f5f6" : ""}`, // change the background color for the disabled variant
+						} ${variant === "disabled" ? "#f5f5f6" : ""}`,
+						width:`${width}` // change the background color for the disabled variant
 					}}
 				></div>
 				{/* user pass data */}
@@ -35,7 +36,7 @@ export const Checkbox = ({ checkColor, variant, label }) => {
 	);
 };
 // ===================== RADIO COMPONENT ==========================
-export const Radio = ({ checkColor, variant, label }) => {
+export const Radio = ({ checkColor, variant, label, width }) => {
 	const [checked, setChecked] = useState(false); // setting the state for the checkbox initially not checked
 
 	return (
@@ -56,8 +57,9 @@ export const Radio = ({ checkColor, variant, label }) => {
 				<div
 					className="circle"
 					style={{
-						backgroundColor: `${variant === "disabled" ? "#f5f5f6" : ""}`,
-					}} // changing the background color of the radio based on the  disabled variant
+						backgroundColor: `${variant === "disabled" ? "#f5f5f6" : ""}`, // changing the background color of the radio based on the  disabled variant
+						width:`${width}`
+					}} 
 				></div>
 				{/*user pass data */}
 				{label}
@@ -66,7 +68,7 @@ export const Radio = ({ checkColor, variant, label }) => {
 	);
 };
 // ===================== TOGGLE COMPONENT ==========================
-export const Toggle = ({ checkColor, variant, label }) => {
+export const Toggle = ({ checkColor, variant, label, width }) => {
 	const [checked, setChecked] = useState(false);
 
 	return (
@@ -90,6 +92,7 @@ export const Toggle = ({ checkColor, variant, label }) => {
 						backgroundColor: `${
 							checked ? DarkTagColor(checkColor) : "" // changing the background color of the toggle based on the variant
 						} ${variant === "disabled" ? "#c3c6c9" : ""}`, // change the background color for the disabled variant
+						width:`${width}`
 					}}
 				></div>
 				{/*user pass data */}

@@ -18,7 +18,6 @@ function Banner({ bannerText, BannerColor, variant }) {
 					backgroundColor: `${LightTagColor(BannerColor)}`,
 					borderColor: `${DarkTagColor(BannerColor)}`,
 				}} // background color and border color of the banner based on the Banner prop passed by the user
-				onClick={variant !== "crossed" && onCloseHandler} // if crossed variant then closed the banner by clicking on it will be disabled
 			>
 				<div className="banner-text">
 					{/* user pass data */}
