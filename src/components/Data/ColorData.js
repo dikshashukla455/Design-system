@@ -1,5 +1,6 @@
 export const colors = {
-	primary: {
+// primary
+"default":"black",
 		p50: "#e8f0fd",
 		p75: "#9fc3f7",
 		p100: "#cfe2fc",
@@ -7,8 +8,7 @@ export const colors = {
 		p300: "#97c6fa",
 		p400: "#7bb8f9",
 		p500: "#0d4290",
-	},
-	secondary: {
+// secondary 
 		s50: "#f2ecfe",
 		s75: "#cbb2fb",
 		s100: "#b691f9",
@@ -16,8 +16,7 @@ export const colors = {
 		s300: "#8142f5",
 		s400: "#5a2eac",
 		s500: "#4f2895",
-	},
-	tertiary: {
+// tertiary
 		t50: "#f5eaf8",
 		t75: "#d7a7e4",
 		t100: "#c682d9",
@@ -25,8 +24,7 @@ export const colors = {
 		t300: "#9d28bd",
 		t400: "#6e1c84",
 		t500: "#601873",
-	},
-	accent: {
+// accent
 		a50: "#f9eaf4",
 		a75: "#e7a7d1",
 		a100: "#dd83be",
@@ -34,17 +32,15 @@ export const colors = {
 		a300: "#c4298f",
 		a400: "#891d64",
 		a500: "#781957",
-	},
-	success: {
-		s50: "#edfaf2",
-		s75: "#edfaf2",
-		s100: "#98e0b1",
-		s200: "#6cd38f",
-		s300: "#4eca78",
-		s400: "#378d54",
-		s500: "#307b49",
-	},
-	warning: {
+// success
+		su50: "#edfaf2",
+		su75: "#edfaf2",
+		su100: "#98e0b1",
+		su200: "#6cd38f",
+		su300: "#4eca78",
+		su400: "#378d54",
+		su500: "#307b49",
+// warning
 		w50: "#fef7ed",
 		w75: "#fddfb4",
 		w100: "#fcd294",
@@ -52,8 +48,7 @@ export const colors = {
 		w300: "#f9b247",
 		w400: "#ae7d32",
 		w500: "#986d2b",
-	},
-	danger: {
+// danger
 		d50: "#fdeded",
 		d75: "#f6b5b5",
 		d100: "#f29696",
@@ -61,8 +56,7 @@ export const colors = {
 		d300: "#e84a4a",
 		d400: "#a23434",
 		d500: "#8e2d2d",
-	},
-	grey: {
+// grey
 		g50: "#f5f5f6",
 		g75: "#d5d6d9",
 		g100: "#c3c6c9",
@@ -70,9 +64,7 @@ export const colors = {
 		g300: "#989ca2",
 		g400: "#6a6d71",
 		g500: "#5d5f63",
-	},
-	black: {
+// black
 		b200: "#2e3643",
 		b300: "#030d1c",
-	},
 };

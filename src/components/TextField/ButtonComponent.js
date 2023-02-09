@@ -1,20 +1,19 @@
 import { React, useState } from "react";
-import { colors } from "../Data/ColorData";
-import { getThemeColor, DarkTagColor } from "../colors/UtilityFunction";
+import { DarkTagColor } from "../colors/UtilityFunction";
 // ===================== CHECKBOX COMPONENT ==========================
-export const Checkbox = ({ checkColor, variant, label, width }) => {
+export const Checkbox = ({ checkColor, variant, label, width, height, id }) => {
 	const [checked, setChecked] = useState(false); // setting the state for the checkbox initially not checked
 
 	return (
 		<>
 			<label
 				className="checkbox"
-				htmlFor={variant === "disabled" ? "myCheckBoxDisable" : "myCheckbox"}
+				htmlFor={id}
 			>
 				<input
 					type="checkbox"
 					className="check_input"
-					id={variant === "disabled" ? "myCheckBoxDisable" : "myCheckbox"}
+					id={id}
 					name="myCheckBox"
 					onChange={() => setChecked(!checked)} // on and off checkbox functionality
 					disabled={variant === "disabled" ? true : false} // setting the disabled state based on the disable variant
@@ -25,8 +24,9 @@ export const Checkbox = ({ checkColor, variant, label, width }) => {
 					style={{
 						backgroundColor: `${
 							checked ? DarkTagColor(checkColor) : "" // changing the background color of the checkbox based on the variant
-						} ${variant === "disabled" ? "#f5f5f6" : ""}`,
-						width:`${width}` // change the background color for the disabled variant
+						} ${variant === "disabled" ? "#f5f5f6" : ""}`, // change the background color for the disabled variant
+						width:`${width}`,
+						height:`${height}` 
 					}}
 				></div>
 				{/* user pass data */}
@@ -36,19 +36,19 @@ export const Checkbox = ({ checkColor, variant, label, width }) => {
 	);
 };
 // ===================== RADIO COMPONENT ==========================
-export const Radio = ({ checkColor, variant, label, width }) => {
+export const Radio = ({ checkColor, variant, label, width,height,id }) => {
 	const [checked, setChecked] = useState(false); // setting the state for the checkbox initially not checked
 
 	return (
 		<>
 			<label
 				className="radio"
-				htmlFor={variant === "disabled" ? "myRadioDisable" : "myRadio"}
+				htmlFor={id}
 			>
 				<input
 					type="radio"
 					className="radio_input"
-					id={variant === "disabled" ? "myRadioDisable" : "myRadio"}
+					id={id}
 					name="myRadio"
 					onChange={() => setChecked(!checked)} // on and off checkbox functionality
 					disabled={variant === "disabled" ? true : false} // setting the disabled state based on the disable variant
@@ -58,7 +58,8 @@ export const Radio = ({ checkColor, variant, label, width }) => {
 					className="circle"
 					style={{
 						backgroundColor: `${variant === "disabled" ? "#f5f5f6" : ""}`, // changing the background color of the radio based on the  disabled variant
-						width:`${width}`
+						width:`${width}`,
+						height:`${height}`
 					}} 
 				></div>
 				{/*user pass data */}
@@ -68,20 +69,20 @@ export const Radio = ({ checkColor, variant, label, width }) => {
 	);
 };
 // ===================== TOGGLE COMPONENT ==========================
-export const Toggle = ({ checkColor, variant, label, width }) => {
+export const Toggle = ({ checkColor, variant, label, width,height, id }) => {
 	const [checked, setChecked] = useState(false);
 
 	return (
 		<>
 			<label
 				className="toggle"
-				htmlFor={variant === "disabled" ? "myToggleDisable" : "myToggle"}
+				htmlFor={id}
 			>
 				<input
 					className="toggle__input"
 					name="toggle"
 					type="checkbox"
-					id={variant === "disabled" ? "myToggleDisable" : "myToggle"}
+					id={id}
 					onChange={() => setChecked(!checked)} // on and off checkbox functionality
 					disabled={variant === "disabled" ? true : false} // setting the disabled state based on the disable variant
 				/>
@@ -92,7 +93,8 @@ export const Toggle = ({ checkColor, variant, label, width }) => {
 						backgroundColor: `${
 							checked ? DarkTagColor(checkColor) : "" // changing the background color of the toggle based on the variant
 						} ${variant === "disabled" ? "#c3c6c9" : ""}`, // change the background color for the disabled variant
-						width:`${width}`
+						width:`${width}`,
+						height:`${height}`
 					}}
 				></div>
 				{/*user pass data */}

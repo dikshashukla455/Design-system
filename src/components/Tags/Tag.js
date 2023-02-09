@@ -1,6 +1,5 @@
 import React from "react";
 import {
-	ButtonType,
 	DarkTagColor,
 	LightTagColor,
 } from "../colors/UtilityFunction";

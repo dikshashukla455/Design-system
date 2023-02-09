@@ -1,8 +1,6 @@
 import React from "react";
 import UploadImg from "../images/upload.svg";
 import DisabledImg from "../images/upload (1).svg";
-import { colors } from "../Data/ColorData";
-import { getThemeColor } from "../colors/UtilityFunction";
 
 function UploadFile({ label, description, variant, acceptFiles, focusColor }) {
 	return (

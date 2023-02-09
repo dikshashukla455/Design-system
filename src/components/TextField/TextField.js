@@ -1,6 +1,6 @@
 import { React, useState } from "react";
 import { colors } from "../Data/ColorData";
-import { getThemeColor } from "../colors/UtilityFunction";
+
 
 // INPUTFIELD
 export const TextField = ({
@@ -10,7 +10,8 @@ export const TextField = ({
 	focusColor,
 	description,
 	variant,
-	width
+	width,
+	error
 }) => {
 	// adding the functionality to handle the errors
 	const [Error, SetError] = useState("");
@@ -38,7 +39,7 @@ export const TextField = ({
 						borderColor: `${setError}`,
 						borderRadius: "4px",
 						background: `${variant === "disabled" ? "#F5F5F6" : "#ffffff"}`, // setting the background color based on the variant prop (disable)
-						//outlineColor: `${colors[getThemeColor(focusColor)][focusColor]}`, 
+						outlineColor: `${colors[focusColor]}`, 
 						width:`${width}`
 					}}
 					onChange={onErrorHandler}
@@ -47,7 +48,7 @@ export const TextField = ({
 				/>
 				{/* setting the error message */}
 				{Error.length === 0 && variant !== "disabled" && (
-					<p className="input_error">Error Message</p>
+					<p className="input_error">{error}</p>
 				)}
 			</form>
 			<br />
@@ -97,7 +98,7 @@ export const TextArea = ({
 						borderColor: `${setError}`,
 						background: `${variant === "disabled" ? "#F5F5F6" : "#ffffff"}`, // setting the background color based on the variant prop (disable)
 						outlineColor: `${
-							colors[getThemeColor(textareaFocusColor)][textareaFocusColor] // setting the outline color based on the prop
+							colors[textareaFocusColor] // setting the outline color based on the prop
 						}`,
 						width:`${width}`
 					}}

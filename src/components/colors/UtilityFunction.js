@@ -1,79 +1,34 @@
 import { colors } from "../Data/ColorData";
 
-// fetching the category of the color by their colorcodes
-// !! showing error
-export function getThemeColor(color) {
-	const themeColor = {
-		p: "primary",
-		s: "secondary",
-		t: "tertiary",
-		a: "accent",
-		su: "success",
-		w: "warning",
-		d: "danger",
-		g: "grey",
-		b: "black",
-	};
-	switch (color.charAt()) {
-		case "p":
-			return themeColor.p;
-			break;
-		case "s":
-			return themeColor.s;
-			break;
-		case "t":
-			return themeColor.t;
-			break;
-		case "a":
-			return themeColor.a;
-			break;
-		case "su":
-			return themeColor.su;
-			break;
-		case "w":
-			return themeColor.w;
-			break;
-		case "d":
-			return themeColor.d;
-			break;
-		case "g":
-			return themeColor.g;
-			break;
-		case "b":
-			return themeColor.b;
-			break;
-	}
-}
-
 // fetching the type of the button background color by their colorcodes
 export function ButtonType(type) {
 	switch (type) {
 		case "primary":
-			return colors.primary.p300;
+			return colors.p300;
 			break;
 		case "secondary":
-			return colors.secondary.s300;
+			return colors.s300;
 			break;
 		case "tertiary":
-			return colors.tertiary.t300;
+			return colors.t300;
 			break;
 		case "accent":
-			return colors.accent.a300;
+			return colors.a300;
 			break;
 		case "success":
-			return colors.success.s300;
+			return colors.su300;
 			break;
 		case "warning":
-			return colors.warning.w300;
+			return colors.w300;
 			break;
 		case "danger":
-			return colors.danger.d300;
+			return colors.d300;
 			break;
 		case "grey":
-			return colors.grey.g300;
+			return colors.g300;
 			break;
 		case "black":
-			return colors.black.b300;
+			return colors.b300;
 			break;
 	}
 }
@@ -81,28 +36,28 @@ export function ButtonType(type) {
 export function DarkTagColor(type) {
 	switch (type) {
 		case "primary":
-			return colors.primary.p500;
+			return colors.p500;
 			break;
 		case "secondary":
-			return colors.secondary.s400;
+			return colors.s400;
 			break;
 		case "tertiary":
-			return colors.tertiary.t400;
+			return colors.t400;
 			break;
 		case "accent":
-			return colors.accent.a400;
+			return colors.a400;
 			break;
 		case "success":
-			return colors.success.s400;
+			return colors.su400;
 			break;
 		case "warning":
-			return colors.warning.w400;
+			return colors.w400;
 			break;
 		case "danger":
-			return colors.danger.d400;
+			return colors.d400;
 			break;
 		case "grey":
-			return colors.grey.g400;
+			return colors.g400;
 			break;
 	}
 }
@@ -110,28 +65,28 @@ export function DarkTagColor(type) {
 export function LightTagColor(type) {
 	switch (type) {
 		case "primary":
-			return colors.primary.p75;
+			return colors.p75;
 			break;
 		case "secondary":
-			return colors.secondary.s75;
+			return colors.s75;
 			break;
 		case "tertiary":
-			return colors.tertiary.t75;
+			return colors.t75;
 			break;
 		case "accent":
-			return colors.accent.a75;
+			return colors.a75;
 			break;
 		case "success":
-			return colors.success.s75;
+			return colors.su75;
 			break;
 		case "warning":
-			return colors.warning.w75;
+			return colors.w75;
 			break;
 		case "danger":
-			return colors.danger.d75;
+			return colors.d75;
 			break;
 		case "grey":
-			return colors.grey.g75;
+			return colors.g75;
 			break;
 	}
 }
