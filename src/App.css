@@ -73,7 +73,7 @@ input[type="file"] {
 	display: none;
 }
 .check_input:checked ~ .checkmark {
-	border: none;
+	border: 1px solid transparent;
 }
 .checkbox .checkmark {
 	margin-left: 0;
@@ -179,7 +179,7 @@ input[type="file"] {
 input,textarea,select {
 	width: 100%;
 	border: unset;
-	border: 1px solid #c3c6c9;
+	border: 2px solid #c3c6c9;
 }
 
 input:focus,textarea:focus,select:focus{

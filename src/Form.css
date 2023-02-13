@@ -26,20 +26,24 @@ input {
 /********* gender label field *********/
 .gender {
 	margin-left: 3rem;
-	font-weight: 500;
 }
-/********* annual label field *********/
-.annual {
-	font-weight: 500;
-}
+
 .checkpara{
 	margin:0 !important;
 }
+/******* annual ***********/
+.radio_label{
+	font-size: 14px;
+}
+
 /**** mobile devices ******/
 
 @media only screen and (max-width: 700px){
 .form-container{
 	margin: 10px 0;
 	padding: 10px 20px;
+}
+.radio_label{
+	font-size: 12px;
 }
 }

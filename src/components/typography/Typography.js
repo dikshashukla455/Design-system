@@ -27,7 +27,7 @@ export const Heading5 = ({ color, children }) => {
 	return <h5 style={{ color: `${colors[color]}` }}>{children}</h5>;
 };
 //paragraph
-export const Paragraph = ({ color, children, fontSize, textTransform, margin }) => {
+export const Paragraph = ({ color, children, fontSize, textTransform, margin, className }) => {
 	return (
 		<p
 			style={{
@@ -36,6 +36,7 @@ export const Paragraph = ({ color, children, fontSize, textTransform, margin }) 
 				textTransform: `${textTransform}`,// uppercase, lowercase , capitalize of the text based on the user input
 				margin: `${margin}`
 			}}
+			className={className}
 		>
 			{children}
 		</p>
