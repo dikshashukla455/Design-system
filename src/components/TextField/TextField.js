@@ -11,21 +11,20 @@ export const TextField = ({
 	description,
 	variant,
 	width,
-	error
+	error,
+	onChange,
+	name,
+	id
 }) => {
-	// adding the functionality to handle the errors
-	const [Error, SetError] = useState("");
-	const onErrorHandler = (e) => {
-		SetError(e.target.value);
-	};
+	const ErrorContext = variant==="error";
 	// changing the input border (error)
 	const setError =
-		Error.length === 0 && variant !== "disabled" ? "#E84A4A" : "#C3C6C9";
+		ErrorContext && variant !== "disabled" ? "#E84A4A" : "#C3C6C9";
 	return (
 		<div>
 			<form action="">
 				{/* form label */}
-				<label htmlFor="" className="input_label">
+				<label htmlFor={id} className="input_label">
 					{label}
 				</label>
 				{/* form description */}
@@ -34,6 +33,8 @@ export const TextField = ({
 				<input
 					type={inputType}
 					placeholder={placeholderText}
+					name={name}
+					id={id}
 					style={{
 						padding: "8px 10px",
 						borderColor: `${setError}`,
@@ -42,12 +43,12 @@ export const TextField = ({
 						outlineColor: `${colors[focusColor]}`, 
 						width:`${width}`
 					}}
-					onChange={onErrorHandler}
+					onChange={onChange}
 					disabled={variant === "disabled" ? true : false} // setting the disabled state based on the variant prop
 					
 				/>
 				{/* setting the error message */}
-				{Error.length === 0 && variant !== "disabled" && (
+				{ErrorContext && variant !== "disabled" && (
 					<p className="input_error">{error}</p>
 				)}
 			</form>

@@ -9,7 +9,8 @@ export const Checkbox = ({
 	height,
 	id,
 	name,
-	className
+	className,
+	error
 }) => {
 	const [checked, setChecked] = useState(false); // setting the state for the checkbox initially not checked
 
@@ -37,6 +38,9 @@ export const Checkbox = ({
 				></div>
 				{/* user pass data */}
 				{label}
+				{variant==="error" && variant !== "disabled" && (
+					<p className="input_error">{error}</p>
+				)}
 			</label>
 		</>
 	);
@@ -117,6 +121,7 @@ export const Toggle = ({
 				></div>
 				{/*user pass data */}
 				<span>{label}</span>
+				
 			</label>
 		</>
 	);
