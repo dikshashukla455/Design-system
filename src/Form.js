@@ -13,9 +13,15 @@ function Form() {
 		mobile: "",
 		DOB: "",
 		email: "",
+		hooks: true,
 	});
-	const [error, setError] = useState(false);
-	const [modal, setModal] = useState(false);
+	const [error, setError] = useState(false); // setting the error functionality
+	const [modal, setModal] = useState(false); // for the popup modal
+	const [firstRenderModal, SetFirstRenderModal] = useState(true); // setting the state for the first render of the popup modal
+	const [checkedOne, setCheckedOne] = useState(false); // setting the state for the checkbox condition one
+	const [checkedTwo, setCheckedTwo] = useState(false); // setting the state for the checkbox condition two
+	const [radioGender, setRadioGender] = useState(false); // setting the state for the gender radio
+	const [radioAnnual, setRadioAnnual] = useState(false); // setting the state for the annual income radio buttons
 	const onErrorHandler = (e) => {
 		const name = e.target.name;
 		const value = e.target.value;
@@ -24,27 +30,36 @@ function Form() {
 			[name]: value,
 		});
 	};
-
+	console.log(radioGender);
 	const onSubmitHandler = (e) => {
+		// conditions happen on clicking the proceed button
 		if (
-			state.fullName.length === 0 ||
-			state.fullName.includes(" ") ||
-			state.mobile.length === 0 ||
-			state.mobile.length !== 10 ||
-			state.DOB.length === 0 ||
-			state.email.length === 0
+			state.fullName.length === 0 || // full name field should not be empty
+			!state.fullName.includes(" ") || // full name field should have spaces
+			state.mobile.length === 0 || // mobile number field should not be empty
+			state.mobile.length !== 10 || // mobile number field should have 10 digit number
+			state.DOB.length === 0 || // DOB field should not be empty
+			state.email.length === 0 || // email field should not be empty
+			!checkedOne ||
+			!checkedTwo || // checkbox and radio should be selected
+			!radioGender ||
+			!radioAnnual
 		) {
+			SetFirstRenderModal(false);
 			setError(true);
 		} else {
+			SetFirstRenderModal(false);
 			setError(false);
 		}
+
 		console.log(state);
 		e.preventDefault();
 	};
 	useEffect(() => {
-		setModal(!modal);
-		console.log("modal");
-	}, [error]);
+		if (!firstRenderModal) {
+			error ? setModal(false) : setModal(true);
+		}
+	}, [error, firstRenderModal]);
 	return (
 		<div className="container">
 			<div className="form-container">
@@ -86,10 +101,21 @@ function Form() {
 									margin: "8px",
 									fontWeight: "400",
 								}}
+								onChange={() => {
+									setRadioGender(!radioGender);
+									return;
+								}}
 							>
 								<Radio name="gender" label="male" /> &nbsp;&nbsp;&nbsp;&nbsp;
 								<Radio name="gender" label="female" />
 							</div>
+							{error && !radioGender ? (
+								<p className="checkbox_error">
+									please select one of the above options
+								</p>
+							) : (
+								""
+							)}
 						</div>
 					</div>
 					{/* Mobile number field */}
@@ -155,6 +181,7 @@ function Form() {
 								margin: "8px",
 								fontWeight: "400",
 							}}
+							onChange={() => setRadioAnnual(!radioAnnual)}
 						>
 							<Radio
 								width="18px"
@@ -192,46 +219,70 @@ function Form() {
 								name="annual"
 							/>{" "}
 						</div>
+						{error && !radioAnnual ? (
+							<p className="checkbox_error">
+								please select one of the above options
+							</p>
+						) : (
+							""
+						)}
 					</div>
 					{/* Checkbox conditions */}
 					<div
 						className=""
-						style={{ display: "flex", textAlign: "left", marginTop: "20px" }}
+						style={{ textAlign: "left", marginTop: "20px", fontSize: "14px" }}
 					>
-						<Checkbox
-							checkColor="primary"
-							width="18px"
-							height="18px"
-							id="checkbox_one"
-						/>
-						<Paragraph color="g300" fontSize="14px" margin="0">
-							By sharing above details, I agree to KLI and its representatives
-							contacting me through call, SMS, email or WhatsApp even if I am
-							registered under NDNC. I also agree that I have read and
-							understood the Privacy policy and agree to abide by the same
-						</Paragraph>
+						<div className="" onChange={() => setCheckedOne(!checkedOne)}>
+							<Checkbox
+								checkColor="primary"
+								width="60px"
+								height="18px"
+								name="hooks"
+								id="checkbox_one"
+								label="By sharing above details, I agree to KLI and its representatives
+						contacting me through call, SMS, email or WhatsApp even if I am
+						registered under NDNC. I also agree that I have read and
+						understood the Privacy policy and agree to abide by the same."
+								className="checkbox_form"
+								color="g300"
+							/>
+						</div>
+						{error && !checkedOne ? (
+							<p className="checkbox_error">please select the checkbox</p>
+						) : (
+							""
+						)}
 					</div>
 					<div
 						className=""
 						style={{
-							display: "flex",
 							textAlign: "left",
 							margin: "8px 0 15px 0",
+							fontSize: "14px",
 						}}
 					>
-						<Checkbox
-							checkColor="primary"
-							width="18px"
-							height="18px"
-							id="checkbox_two"
-						/>
-						<Paragraph color="g300" fontSize="14px" margin="0">
+						<div className="" onChange={() => setCheckedTwo(!checkedTwo)}>
+							<Checkbox
+								checkColor="primary"
+								width="70px"
+								height="18px"
+								name="hooks"
+								id="checkbox_two"
+								label="
 							To undergo suitability analysis, please Click here. If you wish to
 							bypass the suitability analysis please click on the checkbox. By
 							selecting the checkbox, you declare to consciously bypass the
 							recommended suitability module and purchase the policy based on
-							your independent assessment.
-						</Paragraph>
+							your independent assessment."
+								className="checkbox_form"
+								color="g300"
+							/>
+						</div>
+						{error && !checkedTwo ? (
+							<p className="checkbox_error">please select the checkbox</p>
+						) : (
+							" "
+						)}
 					</div>
 
 					{/* submit button */}
@@ -250,7 +301,6 @@ function Form() {
 									type="confirm"
 									label="Are you sure you want to proceed?"
 									message="The changes will not be accepted after submission"
-									
 								/>
 							</div>
 						)}

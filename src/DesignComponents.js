@@ -24,7 +24,7 @@ import "./App.css";
 import ConfirmBox from "./components/ConfirmationBox/ConfirmBox";
 function DesignComponents() {
 	return (
-		<>
+		<div className="" style={{marginLeft:"30px"}}>
 			{/*==================== TYPOGRAPHY COMPONENT =======================*/}
 			<p style={{ fontSize: "45px" }}>Typography</p>
 			{/*======== HEADINGS ========*/}
@@ -384,7 +384,7 @@ function DesignComponents() {
 					message="Once you delete this, it will be gone forever. Make sure you give thanks to it first."
 				/>
 			</div>
-		</>
+		</div>
 	);
 }
 

@@ -1,5 +1,6 @@
 import { React, useState } from "react";
 import { DarkTagColor } from "../colors/UtilityFunction";
+import { colors } from "../Data/ColorData";
 // ===================== CHECKBOX COMPONENT ==========================
 export const Checkbox = ({
 	checkColor,
@@ -9,26 +10,28 @@ export const Checkbox = ({
 	height,
 	id,
 	name,
+	color,
 	className,
-	error
+	error,
 }) => {
 	const [checked, setChecked] = useState(false); // setting the state for the checkbox initially not checked
 
 	return (
 		<>
-			<label className={`checkbox ${className}`} htmlFor={id}>
+			<label className={`checkbox ${className}`} htmlFor={id} style={{color:`${colors[color]}`}}>
 				<input
 					type="checkbox"
 					className="check_input"
 					id={id}
 					name={name}
-					onChange={() => setChecked(!checked)} // on and off checkbox functionality
+					onChange={()=>setChecked(!checked)} // on and off checkbox functionality
 					disabled={variant === "disabled" ? true : false} // setting the disabled state based on the disable variant
 				/>
 				{/* creating a custom checkbox */}
 				<div
 					className="checkmark"
 					style={{
+					
 						backgroundColor: `${
 							checked ? DarkTagColor(checkColor) : "" // changing the background color of the checkbox based on the variant
 						} ${variant === "disabled" ? "#f5f5f6" : ""}`, // change the background color for the disabled variant

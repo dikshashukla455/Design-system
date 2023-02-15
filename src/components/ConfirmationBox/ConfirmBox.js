@@ -54,7 +54,7 @@ function ConfirmBox({ type, label, message }) {
 				<div className="confirm_button">
 					{type === "confirm" && ( // variants of the buttons based on the confirm type
 						<>
-							<span onClick={() => setIsOpen(false)}>
+							<span onClick={() => setIsOpen(!isOpen)}>
 								{" "}
 								<Button textColor="s300" variant="transparent" fontSize="12px">
 									Cancel
